@@ -1,0 +1,16 @@
+
+spring:
+#  r2dbc:
+#    url: r2dbc:h2:mem:///practicum?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    username: test
+#    password: test
+#    generate-unique-name: false
+  sql:
+    init:
+      mode: always # Это правильное свойство для Spring Boot 3.x
+      schema-locations: classpath:schema.sql
+logging:
+  level:
+    org.springframework.r2dbc.core.DefaultDatabaseClient: DEBUG # заодно включим логирование SQL-запросов
+    io.r2dbc.r2dbc.postgresql: DEBUG
+

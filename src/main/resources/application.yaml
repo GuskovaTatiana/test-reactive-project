@@ -1,3 +1,19 @@
+server:
+  port: 9006
+
 spring:
   application:
     name: test-reactive-project
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    pool:
+      enabled: true
+      initial-size: 10
+      max-size: 50
+      max-idle-time: 30s
+      max-life-time: 10m
+      validation-query: SELECT 1
+
+
